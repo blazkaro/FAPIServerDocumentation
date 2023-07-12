@@ -1,0 +1,67 @@
+<div class="header">Rich Authorization Requests</div>
+
+<p>
+    This introduces <strong>authorization_details</strong> parameters which is replacement of <strong>scope</strong>
+</p>
+<br>
+<h2>Difference between RAR specification and this implementation</h2>
+<p>
+    See official example of authorization_details:
+    <mat-card>
+        <mat-card-content class="sample-content">
+            <pre>{{officialPhotoApiExample | json}}</pre>
+        </mat-card-content>
+    </mat-card>
+</p>
+<p>
+    The resource server won't know whether the <strong>read</strong> access is for both datatypes
+    <strong>metadata</strong> and <strong>images</strong>,
+    or only for one of
+    them. The same problem is with <strong>write</strong> permission. What's more, it's not clear whether the
+    permissions are both for
+    both geolocations or there is <strong>read</strong> for first geolocation and <strong>write</strong> for second,
+    or
+    in reverse order.
+    It's completely
+    not clear. Now imagine you want to use <strong>Grant Management</strong> and <strong>merge</strong> some
+    <strong>authorization_details</strong> to
+    existing. I think
+    there is a lot of ambiguity here, so I decided to design my own format for
+    <strong>authorization_details</strong>.
+    The above example
+    interpretation (because there can be many) could look as below:
+
+    <br><br>
+    <mat-card>
+        <mat-card-content class="sample-content">
+            <pre>{{photoApiExample | json}}</pre>
+        </mat-card-content>
+    </mat-card>
+    <br>
+</p>
+
+<p>
+    The "description" is specific to every action. This approach provides high accuracy and allows to flexibly
+    express
+    your needs.
+    <br>
+    That's example of authorization_details that doesn't need to be descriptive, so used as scope (which is not
+    supported) alternative:
+    <mat-card>
+        <mat-card-content class="sample-content">
+            <pre>{{openIdExample | json}}</pre>
+        </mat-card-content>
+    </mat-card>
+
+</p>
+
+<p>
+    While the openid is special, built-in type, it doesn't need to have specified locations. It will be processed by
+    authorization server only.
+</p>
+
+<h2>Form of authorization_details</h2>
+This parameter can be represented as JSON array of objects or single object. Every object must have
+<strong>type</strong>, <strong>actions</strong>, <strong>locations</strong>. When it's array, then any
+<strong>type</strong> must be used only once. How specific type of authorization detail must look is implementation
+specific and the configuration is represented by <strong>AuthorizationDetailSchema</strong> class

@@ -1,0 +1,53 @@
+<div class="header">Demonstrating Proof Of Possession</div>
+
+<p>
+    The DPoP mechanism introduces <strong>dpop_pkh</strong> parameter and <strong>DPoP</strong> header.
+</p>
+
+<h2>dpop_pkh request's parameter</h2>
+<p>
+    The <strong>dpop_pkh</strong> parameter is Base64-Url encoded hash of v4 public PASERK. It's equivalent of
+    <strong>dpop_jkt</strong>, but uses PASERK instead of JWK.
+    If no specified, then generated <strong>access token</strong> will be bounded to client's authentication public
+    key.
+    <br>
+    This parameter can be used at PAR and CIBA endpoints.
+</p>
+<br>
+<p>
+    If used at PAR endpoint, then the generated <strong>authorization code</strong> and later the <strong>access
+        token</strong> will be bounded to this hash.
+</p>
+<p>
+    If used at CIBA endpoint, then the generated <strong>auth_req_id</strong> and <strong>access token</strong> will
+    also be bounded to this hash.
+</p>
+<h2>DPoP header</h2>
+<p>
+    The <strong>DPoP</strong> header contains v4 public PASETO token. It can be used at token endpoint or in call to
+    resource server.
+</p>
+<br>
+<p>
+    If used at token endpoint, then additionally beyond what the specification requires, the <strong>PASETO
+        footer</strong> must be v4 public PASERK that represents public key which should be used to verify this
+    token signature. If the
+    <strong>grant_type</strong> is <strong>authorization_code</strong> or
+    <strong>urn:openid:params:grant-type:ciba</strong> and generated <strong>authorization code</strong> or
+    <strong>auth_req_id</strong> were bounded to some <strong>dpop_pkh</strong>, then it will be checked whether
+    footer of sent token in <strong>DPoP header</strong> matches the <strong>dpop_pkh</strong>.
+    <br>
+    Otherwise, the <strong>access token</strong> will be just bounded to public key from <strong>PASETO
+        footer</strong>
+</p>
+<p>
+    Likewise to <strong>dpop_pkh</strong>, if the <strong>DPoP header</strong> is not specified then the generated
+    <strong>access token</strong> will be bounded to client's authentication public key.
+</p>
+<br>
+<p>
+    If used at call to resource server, then there is no <strong>PASETO footer</strong> needed, but additional claim
+    (as in specification) <strong>ath</strong> which means <strong>access token hash</strong> is required
+</p>
+<h2>Server-provided nonce</h2>
+Currently, the server-provided nonces are not yet supported.

@@ -1,0 +1,21 @@
+<div class="header">
+    {{reqInfo.name}}
+</div>
+
+<mat-card id="sample">
+    <mat-card-title id="sample-title">
+        {{reqInfo.method}} {{reqInfo.path}}
+    </mat-card-title>
+
+    <mat-card-subtitle>
+        Content-Type {{reqInfo.contentType}}
+    </mat-card-subtitle>
+
+    <mat-card-content id="sample-content">
+        <span *ngFor="let param of reqInfo.parameters | keyvalue : avoidSorting; let i = index">
+            <span class="param-key">{{param.key}}</span>=<span class="param-value">{{isString(param.value) ?
+                param.value : param.value | json}}<span *ngIf="i != parametersCount-1">&</span></span>
+            <br>
+        </span>
+    </mat-card-content>
+</mat-card>

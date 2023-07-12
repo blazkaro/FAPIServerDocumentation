@@ -1,0 +1,62 @@
+<app-example-request [reqInfo]="requestInfo">
+</app-example-request>
+<br>
+<h2>Required parameters</h2>
+<ul>
+    <li>
+        <span class="param-key">client_id, client_assertion_type, client_assertion</span> - see <a
+            href="/client_authentication">Client
+            Authentication</a>
+    </li>
+
+    <li>
+        <span class="param-key">claims</span> - the claims which will be accessible by userinfo endpoint
+        (if <strong>openid</strong> authorization detail type is requested). The <strong>sub</strong> claim must be
+        requested (or already granted if <strong>grant_id</strong> is specified)
+    </li>
+    <li>
+        <span class="param-key">redirect_uri</span>
+    </li>
+    <li>
+        <span class="param-key">state</span> - by default, the length must be between 43 and 384
+    </li>
+    <li>
+        <span class="param-key">nonce</span> - by default, the length must be between 43 and 384
+    </li>
+    <li>
+        <span class="param-key">code_challenge_method</span> - it must be <strong>S256</strong>
+    </li>
+    <li>
+        <span class="param-key">code_challenge</span> - it must be Base64-Url encoded string, by default with length
+        between 43 and 128
+    </li>
+</ul>
+
+<h2>Optional parameters</h2>
+<ul>
+    <li>
+        <span class="param-key">authorization_details</span> - see <a href="/rich_authorization_requests">Rich
+            Authorization Requests</a>
+    </li>
+    <li>
+        <span class="param-key">grant_id, grant_management_action</span> - see <a
+            href="https://openid.net/specs/fapi-grant-management.html#name-authorization-request">Grant Management
+            RFC</a> It can be required, but it depends on provider configuration
+    </li>
+    <li>
+        <span class="param-key">dpop_pkh</span> - Base64-Url encoded hash of v4 public PASERK. The generated
+        <strong>authorization code</strong> and
+        later
+        the <strong>access token</strong> will be
+        bounded to this hash. It's equivalent of <strong>dpop_jkt</strong>, but uses PASERK instead of JWK.
+        If no specified, then generated <strong>access token</strong> will be bounded to client's authentication public
+        key
+    </li>
+    <li>
+        <span class="param-key">prompt</span> - supported values are: <strong>login</strong>. To request fresh grant use
+        <strong>grant_management_action</strong>
+    </li>
+    <li>
+        <span class="param-key">max_age</span>
+    </li>
+</ul>

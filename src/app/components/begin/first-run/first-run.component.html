@@ -1,0 +1,29 @@
+<div class="header">First run</div>
+
+<h2>Firstly, configure FAPIServer. That's minimal example:</h2>
+<pre>
+        <code [highlight]="minimalConfigurationExample"></code>
+    </pre>
+<p>
+    Note that this example uses in-memory secret credentials store, so it uses singleton.
+    If you want different bevavior, implement your own <strong>ISecretCredentialsStore</strong>, configure it and
+    don't call to use default implementation.
+</p>
+
+<h2>Configure storage services</h2>
+<p>
+    The <strong>FAPIServer.Storage.EntityFramework</strong> is implementation of <strong>FAPIServer.Storage</strong>
+    using EntityFramework. If you want to use it, add it to your project by NuGet package manager. This
+    implementation will automatically seed necessary data.
+</p>
+<br>
+<h3>You can configure it by calling:</h3>
+<pre>
+        <code [highlight]="efStorageConfigurationExample"></code>
+    </pre>
+However, remember to add appropriate DbContext's. They are: <strong>ConfigurationDbContext, GrantsDbContext,
+    RevocationsDbContext</strong>
+<br>
+<h2>Every implementation is replacable</h2>
+Yes, you can do your own implementation for every interface you want. Just configure it before configuring
+FAPIServer.

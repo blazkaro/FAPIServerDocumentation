@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~highlight.js/styles/github-dark.css';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.header {
+    font-size: 2.5em;
+    margin-bottom: 1.5%;
+    color: #FC7E15;
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #FC7E15;
+}
+
+.param-key,
+.param-value {
+    color: #FF3333;
+}
+
+.param-value {
+    filter: brightness(.85);
+}

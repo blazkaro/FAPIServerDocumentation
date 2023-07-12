@@ -1,0 +1,51 @@
+#container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: stretch;
+}
+
+#menu-bar {
+    background-color: #51BBFB;
+    order: 0;
+    flex: 0.8;
+    overflow: auto;
+}
+
+#description {
+    background-color: #1B1C1E;
+    order: 1;
+    flex: 3;
+    overflow: auto;
+    color: #F0F0F0;
+    padding: 1.5%;
+    font-size: 1.1em;
+}
+
+.list-subheader {
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #1B1C1E;
+}
+
+.list-item-title {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #F0F0F0;
+}
+
+.list-item:hover .list-item-title {
+    color: #1B1C1E !important;
+    animation: font-size-animation .5s linear infinite alternate;
+}
+
+@keyframes font-size-animation {
+    from {
+        font-size: 1.1em;
+    }
+
+    to {
+        font-size: 1.2em;
+    }
+}

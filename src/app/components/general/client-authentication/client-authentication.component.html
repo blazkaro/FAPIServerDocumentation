@@ -1,0 +1,17 @@
+<div class="header">Client Authentication</div>
+
+<p>
+    The only supported authentication type is <strong>private_key_paseto</strong> (private_key_jwt that uses PASETO
+    instead of JWT)
+    <br>
+    This type requires the following parameters to be in request:
+</p>
+<ul>
+    <li><span class="param-key">client_id</span> - The unique client identifier</li>
+    <li><span class="param-key">client_assertion_type</span> - The assertion type, it must be equal
+        to <strong>urn:ietf:params:oauth:client-assertion-type:paseto-bearer</strong>
+    </li>
+    <li><span class="param-key">client_assertion</span> - The v4 public PASETO token with claims required for client
+        assertion, signed by
+        pre-registered client's key</li>
+</ul>
