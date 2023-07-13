@@ -34,3 +34,19 @@ h6 {
 .param-value {
     filter: brightness(.85);
 }
+
+a {
+    color: inherit;
+    animation: font-size-animation .5s linear infinite alternate;
+
+}
+
+@keyframes font-size-animation {
+    from {
+        font-size: 1em;
+    }
+
+    to {
+        font-size: 1.02em;
+    }
+}

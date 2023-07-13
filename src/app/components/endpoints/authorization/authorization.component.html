@@ -1,0 +1,39 @@
+<app-example-request [reqInfo]="requestInfo"></app-example-request>
+
+<br>
+<h2>Required parameters</h2>
+<ul>
+    <li>
+        <span class="param-key">
+            client_id
+        </span> - The unique client identifier
+    </li>
+    <li>
+        <span class="param-key">
+            request_uri
+        </span> - The request object identifier. You have to obtain it at PAR endpoint.
+    </li>
+</ul>
+
+<h2>Interaction with user</h2>
+<p>
+    If redirected user must be authenticated or reauthenticated, then the <strong>DefaultChallengeScheme</strong> is
+    challenged. If no specified, by default the <strong>CookieAuthenticationScheme</strong> is used, so user will be
+    redirected to <strong>/Account/Login</strong> along with <strong>ReturnUrl</strong> query string parameter, which
+    is path to <strong>authorization endpoint</strong> along with all requested parameters. When user logs in,
+    you need to inform <strong>FAPIServer</strong> about it using <strong>IInteractionService</strong>, which
+    provides <strong>SignedIn()</strong> method and redirect user to <strong>ReturnUrl</strong>.
+</p>
+<p>
+    If user must give consent, he will be redirected to pre-configured path (by default <strong>/consent</strong>) and
+    there you should call appropriate method from <strong>IInteractionService</strong> to grant or deny access (depends
+    on user decision). The same rules about <strong>ReturnUrl</strong> applies here, so you can redirect user.
+</p>
+<p>
+    Most of methods require <strong>ParObject</strong> as parameter. To retrieve it from <strong>ReturnUrl</strong> use
+    static class <strong>InteractionHelper</strong> and call <strong>GetAuthorizationContextFromReturnUrl()</strong>. It
+    will return <strong>AuthorizationRequest</strong> from which you can retrieve <strong>request_uri</strong>. Now you
+    can use <strong>IAuthorizationRequestPersistenceService</strong> to <strong>ReadAsync()</strong> the
+    <strong>ParObject</strong>. The default implementation returns null when not found or is invalid, so don't worry
+    about validating <strong>ParObject</strong>.
+</p>

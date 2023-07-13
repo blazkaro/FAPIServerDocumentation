@@ -15,6 +15,7 @@ import { RichAuthorizationRequestsComponent } from './components/general/rich-au
 import { DemonstratingProofOfPossessionComponent } from './components/general/demonstrating-proof-of-possession/demonstrating-proof-of-possession.component';
 import { FirstRunComponent } from './components/begin/first-run/first-run.component';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
+import { AuthorizationComponent } from './components/endpoints/authorization/authorization.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
     ClientAuthenticationComponent,
     RichAuthorizationRequestsComponent,
     DemonstratingProofOfPossessionComponent,
-    FirstRunComponent
+    FirstRunComponent,
+    AuthorizationComponent
   ],
   imports: [
     BrowserModule,

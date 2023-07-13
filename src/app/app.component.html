@@ -35,6 +35,10 @@
   </div>
 
   <div id="description">
-    <router-outlet></router-outlet>
+    <router-outlet #outlet="outlet"></router-outlet>
+    <div *ngIf="!outlet.isActivated">
+      <div class="header">Welcome to <a target="_blank" href="https://github.com/blazkaro/FAPIServer">FAPIServer
+          documentation</a></div>
+    </div>
   </div>
 </div>

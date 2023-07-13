@@ -44,13 +44,8 @@
             RFC</a> It can be required, but it depends on provider configuration
     </li>
     <li>
-        <span class="param-key">dpop_pkh</span> - Base64-Url encoded hash of v4 public PASERK. The generated
-        <strong>authorization code</strong> and
-        later
-        the <strong>access token</strong> will be
-        bounded to this hash. It's equivalent of <strong>dpop_jkt</strong>, but uses PASERK instead of JWK.
-        If no specified, then generated <strong>access token</strong> will be bounded to client's authentication public
-        key
+        <span class="param-key">dpop_pkh</span> - see <a href="/demonstrating_proof_of_possession">Demonstrating Proof
+            Of Possession</a>
     </li>
     <li>
         <span class="param-key">prompt</span> - supported values are: <strong>login</strong>. To request fresh grant use

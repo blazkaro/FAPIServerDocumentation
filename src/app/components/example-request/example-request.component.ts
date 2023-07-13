@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 export class RequestInfo {
-  constructor(name: string, method: string, contentType: string, path: string, parameters: { [key: string]: any }) {
+  constructor(name: string, method: string, contentType: string | null, path: string, parameters: { [key: string]: any }) {
     this.name = name
     this.method = method
     this.contentType = contentType
@@ -11,7 +11,7 @@ export class RequestInfo {
 
   name: string
   method: string
-  contentType: string
+  contentType: string | null
   path: string
   parameters: { [key: string]: any }
 }
