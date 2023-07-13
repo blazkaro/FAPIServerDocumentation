@@ -16,6 +16,7 @@ import { DemonstratingProofOfPossessionComponent } from './components/general/de
 import { FirstRunComponent } from './components/begin/first-run/first-run.component';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 import { AuthorizationComponent } from './components/endpoints/authorization/authorization.component';
+import { DiscoveryComponent } from './components/endpoints/discovery/discovery.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthorizationComponent } from './components/endpoints/authorization/aut
     RichAuthorizationRequestsComponent,
     DemonstratingProofOfPossessionComponent,
     FirstRunComponent,
-    AuthorizationComponent
+    AuthorizationComponent,
+    DiscoveryComponent
   ],
   imports: [
     BrowserModule,
