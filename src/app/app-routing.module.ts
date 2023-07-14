@@ -7,6 +7,7 @@ import { DemonstratingProofOfPossessionComponent } from './components/general/de
 import { FirstRunComponent } from './components/begin/first-run/first-run.component';
 import { AuthorizationComponent } from './components/endpoints/authorization/authorization.component';
 import { DiscoveryComponent } from './components/endpoints/discovery/discovery.component';
+import { TokenComponent } from './components/endpoints/token/token.component';
 
 const routes: Routes = [
   { path: 'first_run', component: FirstRunComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'demonstrating_proof_of_possession', component: DemonstratingProofOfPossessionComponent },
   { path: 'pushed_authorization_requests', component: PushedAuthorizationRequestsComponent },
   { path: 'authorization', component: AuthorizationComponent },
+  { path: 'token', component: TokenComponent },
   { path: 'discovery', component: DiscoveryComponent }
 ];
 

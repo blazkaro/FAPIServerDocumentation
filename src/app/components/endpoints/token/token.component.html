@@ -1,0 +1,58 @@
+<app-example-request [reqInfo]="requestInfo">
+</app-example-request>
+<br>
+
+<p>
+    The required parameter for every request is <strong>grant_type</strong>. Also, every request to this endpoint must
+    be authenticated, see <a href="/client_authentication">Client Authentication</a>
+    <br>
+    Also, for every request you can use <strong>DPoP header</strong>. Normally it's optional, but sometimes required.
+    See <a href="/demonstrating_proof_of_possession">Demonstrating Proof Of Possession</a>
+</p>
+
+<h1>Authorization Code grant</h1>
+<h2>Required parameters</h2>
+<ul>
+    <li>
+        <span class="param-key">code</span>
+    </li>
+    <li>
+        <span class="param-key">code_verifier</span>
+    </li>
+    <li>
+        <span class="param-key">redirect_uri</span>
+    </li>
+</ul>
+<h1>Client Credentials Grant</h1>
+<h2>Required parameters</h2>
+<ul>
+    <li>
+        <span class="param-key">authorization_details</span> - see <a href="/rich_authorization_requests">Rich
+            Authorization Requests</a>. The <strong>openid</strong> type will be ignored while using this grant
+    </li>
+</ul>
+<h1>Refresh Token Grant</h1>
+<h2>Required parameters</h2>
+<ul>
+    <li>
+        <span class="param-key">refresh_token</span>
+    </li>
+</ul>
+<h2>Optional parameters</h2>
+<ul>
+    <li>
+        <span class="param-key">authorization_details_types</span> - if you don't want to get all earlier granted
+        authorization_details, you can specify space-delimited types you want now, e.g <strong>openid photo-api</strong>
+    </li>
+    <li>
+        <span class="param-key">claims</span> - if you don't want to get all earlier granted claims, you can specify
+        space-delimited claims you want now, e.g <strong>email</strong>
+    </li>
+</ul>
+<h1>Client Initiated Backchannel Authentication</h1>
+<h2>Required parameters</h2>
+<ul>
+    <li>
+        <span class="param-key">auth_req_id</span>
+    </li>
+</ul>

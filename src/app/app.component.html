@@ -37,8 +37,12 @@
   <div id="description">
     <router-outlet #outlet="outlet"></router-outlet>
     <div *ngIf="!outlet.isActivated">
-      <div class="header">Welcome to <a target="_blank" href="https://github.com/blazkaro/FAPIServer">FAPIServer
-          documentation</a></div>
+      <div class="header">
+        Welcome to <a target="_blank" href="https://github.com/blazkaro/FAPIServer">FAPIServer documentation</a>
+      </div>
+
+      Please note that this documentation focuses on implementation-specific aspects, not on explaining OAuth, FAPIor
+      OIDC.
     </div>
   </div>
 </div>
