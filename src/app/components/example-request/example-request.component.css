@@ -1,7 +1,4 @@
 #sample {
     padding: .75%;
-}
-
-#sample-content {
-    word-wrap: break-word;
+    word-break: break-all;
 }

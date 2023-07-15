@@ -1,7 +1,14 @@
 export abstract class Constants {
-    static readonly ClientAuthenticationParams: { [key: string]: any } = {
+    static readonly ExampleClientAuthenticationParams: { [key: string]: any } = {
         'client_id': 'testClient',
         'client_assertion_type': 'urn:ietf:params:oauth:client-assertion-type:paseto-bearer',
         'client_assertion': 'v4.public.eyJpc3MiOiJ0ZXN0Q2xpZW50IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzExOS9mYXBpL2NpYmEiLCJzdWIiOiJ0ZXN0Q2xpZW50IiwibmJmIjoiMjAyMy0wNy0wOVQxMDo0Mjo0NC4xODk0ODQ1WiIsImV4cCI6IjIwMjMtMDctMDlUMTE6NDI6NDQuMTg5NDg0NVoiLCJqdGkiOiI3MDlmNjQ3Zi05MTM0LTQ1YzAtOTVmNi02OWQ2MmUzZDlmNWQiffh5uoUzBLMBBka6u62Pg0nZZVQCDyg82TAYRs7kn8Oqv9knQnVGAGrNI35neltbkQkKQNzGgNQR3t5OTwQLSQ4'
+    }
+
+    static readonly ExampleAccessToken: string = "v4.public.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTE5LyIsInN1YiI6IjEiLCJuYmYiOiIyMDIzLTA3LTE0VDE3OjQ1OjI0LjkzOTEwNjJaIiwiZXhwIjoiMjAyMy0wNy0xNFQxODoxNToyNC45MzkxMDYyWiIsImp0aSI6IjFmMzZmZmFhLTFjOTMtNGMzOS1hMGExLTZiM2ExZDU0NTkyMCIsImNsaWVudF9pZCI6InRlc3RDbGllbnQiLCJjbmYiOnsicGtoIjoicEpXT3JNczI0elRfbVNhM25Ra09mZ3M3UjVLbEdCUkJxM3UxMFlDQV9VQSJ9LCJhdXRob3JpemF0aW9uX2RldGFpbHMiOlt7InR5cGUiOiJwaG90by1hcGkiLCJhY3Rpb25zIjp7InJlYWQiOnsiZ2VvbG9jYXRpb24iOlt7ImxhdCI6LTMyLjM2NCwibG5nIjoxNTMuMjA3fSx7ImxhdCI6LTM1LjM2NCwibG5nIjoxNTguMjA3fV0sIm1ldGFkYXRhIjpbInRpdGxlIiwiZGVzY3JpcHRpb24iLCJhdXRob3IiLCJsaWtlcyIsImNyZWF0ZWRfYXQiXX0sIndyaXRlIjp7Imdlb2xvY2F0aW9uIjpbeyJsYXQiOi0zNS4zNjQsImxuZyI6MTU4LjIwN31dfX0sImxvY2F0aW9ucyI6WyJodHRwczovL3NlcnZlci5leGFtcGxlLm5ldC8iLCJodHRwczovL3Jlc291cmNlLmxvY2FsL290aGVyIl19XSwiY2xhaW1zIjoic3ViIGVtYWlsIn2j5wIAeRDl_XIYI1q_lfkwFaofrIFzLcrPSxsXYGIYbGbfBn17reARZ-0BSpJ_lq4Mma1O4YpVtKhtEDijvhEO"
+    static readonly ContentTypeFormUrlEncodedHeader: { [key: string]: any } = { 'Content-Type': 'application/x-www-form-urlencoded' }
+    static readonly ExampleDPoPAuthorization: { [key: string]: any } = {
+        'Authorization': 'DPoP ' + this.ExampleAccessToken,
+        'DPoP': 'v4.public.eyJuYmYiOiIyMDIzLTA3LTE1VDA5OjE2OjQ0LjI2MzUyOTdaIiwiZXhwIjoiMjAyMy0wNy0xNVQxMDoxNjo0NC4yNzA2NDgzWiIsImh0bSI6IkdFVCIsImh0dSI6Imh0dHBzOi8vbG9jYWxob3N0OjcxMTkvYXBpL2V4YW1wbGUiLCJhdGgiOiJfb2dQbXR5dXU0SzNwR3VWVWR2cUV4cU05V2FNYnhRQjc0VHJyVEN4WjZzIiwianRpIjoiNTU4YjVhYTgtNzI3ZC00YTBhLWFmNTItZmIyYmIyNGE3NjhmIn3-Pd-QGzQs4NCweRU_c8uR6Hck4L66bpbswWJsOR-bgNe5k84V6mIFn7H64f37HjecOidHb9JLkbee3FbUjeID.azQucHVibGljLmNyRGpKcWVwSjFzcVVaWjV3QjN1Tmx4SE5PRy0wc3BBbWthT1FyNVA0cFE'
     }
 }

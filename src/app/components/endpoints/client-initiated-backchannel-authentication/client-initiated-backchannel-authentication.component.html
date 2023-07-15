@@ -1,9 +1,5 @@
-<app-example-request [reqInfo]="requestInfo">
-</app-example-request>
+<app-example-request [reqInfo]="requestInfo"></app-example-request>
 <br>
-<p>
-    Every requset to this endpoint must be authenticated. See <a href="/client_authentication">Client Authentication</a>
-</p>
 <h2>Required parameters</h2>
 <ul>
     <li>
@@ -12,28 +8,26 @@
         requested (or already granted if <strong>grant_id</strong> is specified)
     </li>
     <li>
-        <span class="param-key">redirect_uri</span>
+        <span class="param-key">client_notification_token</span> - required if client is registered to use
+        <strong>Ping</strong> mode
     </li>
     <li>
-        <span class="param-key">state</span> - by default, the length must be between 43 and 384
-    </li>
-    <li>
-        <span class="param-key">nonce</span> - by default, the length must be between 43 and 384
-    </li>
-    <li>
-        <span class="param-key">code_challenge_method</span> - it must be <strong>S256</strong>
-    </li>
-    <li>
-        <span class="param-key">code_challenge</span> - it must be Base64-Url encoded string, by default with length
-        between 43 and 128
+        <span class="param-key">id_token_hint or login_hint</span> - one of these must be present. The
+        <strong>login_hint</strong> value is by default treated as subject - unique user identifier
     </li>
 </ul>
-
 <h2>Optional parameters</h2>
 <ul>
     <li>
         <span class="param-key">authorization_details</span> - see <a href="/rich_authorization_requests">Rich
             Authorization Requests</a>
+    </li>
+    <li>
+        <span class="param-key">binding_message</span>
+    </li>
+    <li>
+        <span class="param-key">user_code</span> - by default it's optional, but can be required by specific user. See
+        <a href="/necessary_services">Implementing necessary services</a>
     </li>
     <li>
         <span class="param-key">grant_id, grant_management_action</span> - see <a
@@ -43,12 +37,5 @@
     <li>
         <span class="param-key">dpop_pkh</span> - see <a href="/demonstrating_proof_of_possession">Demonstrating Proof
             Of Possession</a>
-    </li>
-    <li>
-        <span class="param-key">prompt</span> - supported values are: <strong>login</strong>. To request fresh grant use
-        <strong>grant_management_action</strong>
-    </li>
-    <li>
-        <span class="param-key">max_age</span>
     </li>
 </ul>

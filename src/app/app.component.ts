@@ -57,7 +57,7 @@ export class AppComponent {
     {
       name: "Client-Initiated Backchannel Authentication",
       rfc: new URL("https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html"),
-      docPath: "/ciba"
+      docPath: "/client_initiated_backchannel_authentication"
     },
     {
       name: "UserInfo",
@@ -90,6 +90,10 @@ export class AppComponent {
     {
       name: 'First run',
       docPath: 'first_run'
+    },
+    {
+      name: 'Implementing necessary services',
+      docPath: 'necessary_services'
     }
   ]
 

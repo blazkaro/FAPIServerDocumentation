@@ -1,0 +1,13 @@
+<app-example-request [reqInfo]="requestInfo"></app-example-request>
+<br>
+<p>
+    Every requset to this endpoint must be authenticated. See <a href="/client_authentication">Client Authentication</a>
+</p>
+
+<h2>Required parameters</h2>
+<ul>
+    <li>
+        <span class="param-key">token</span> - if it starts with <strong>v4.paseto.</strong> it will be processed as
+        <strong>access token</strong>. Otherwise, the provider will assume that's <strong>refresh token</strong>
+    </li>
+</ul>

@@ -18,6 +18,13 @@ import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 import { AuthorizationComponent } from './components/endpoints/authorization/authorization.component';
 import { DiscoveryComponent } from './components/endpoints/discovery/discovery.component';
 import { TokenComponent } from './components/endpoints/token/token.component';
+import { TokenIntrospectionComponent } from './components/endpoints/token-introspection/token-introspection.component';
+import { TokenRevocationComponent } from './components/endpoints/token-revocation/token-revocation.component';
+import { GrantQueryingComponent } from './components/endpoints/grant-querying/grant-querying.component';
+import { GrantRevocationComponent } from './components/endpoints/grant-revocation/grant-revocation.component';
+import { ClientInitiatedBackchannelAuthenticationComponent } from './components/endpoints/client-initiated-backchannel-authentication/client-initiated-backchannel-authentication.component';
+import { NecessaryServicesComponent } from './components/begin/necessary-services/necessary-services.component';
+import { UserinfoComponent } from './components/endpoints/userinfo/userinfo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,14 @@ import { TokenComponent } from './components/endpoints/token/token.component';
     FirstRunComponent,
     AuthorizationComponent,
     DiscoveryComponent,
-    TokenComponent
+    TokenComponent,
+    TokenIntrospectionComponent,
+    TokenRevocationComponent,
+    GrantQueryingComponent,
+    GrantRevocationComponent,
+    ClientInitiatedBackchannelAuthenticationComponent,
+    NecessaryServicesComponent,
+    UserinfoComponent
   ],
   imports: [
     BrowserModule,

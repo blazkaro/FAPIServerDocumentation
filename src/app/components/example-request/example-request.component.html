@@ -7,8 +7,8 @@
         {{reqInfo.method}} {{reqInfo.path}}
     </mat-card-title>
 
-    <mat-card-subtitle *ngIf="reqInfo.contentType != null">
-        Content-Type {{reqInfo.contentType}}
+    <mat-card-subtitle id="sample-headers" *ngFor="let header of reqInfo.headers | keyvalue">
+        <span class="param-key">{{header.key}}</span>: {{header.value}}<br>
     </mat-card-subtitle>
 
     <mat-card-content id="sample-content">
@@ -19,3 +19,9 @@
         </span>
     </mat-card-content>
 </mat-card>
+<br>
+<p *ngIf="reqInfo.authorizationRequired">
+    The request must be authorized using <strong>Authorization</strong> and the <strong>DPoP</strong> headers. See <a
+        href="https://www.ietf.org/archive/id/draft-ietf-oauth-dpop-16.html#name-the-dpop-authentication-sch">DPoP
+        RFC</a> and have in mind that <strong>FAPIServer</strong> uses PASETO instead of JWT.
+</p>

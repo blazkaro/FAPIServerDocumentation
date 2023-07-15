@@ -7,8 +7,8 @@ import { RequestInfo } from '../../example-request/example-request.component';
   styleUrls: ['./authorization.component.css']
 })
 export class AuthorizationComponent {
-  requestInfo: RequestInfo = new RequestInfo('Authorization Request', 'GET', null, '/fapi/authorization?', {
+  requestInfo: RequestInfo = new RequestInfo('Authorization Request', 'GET', '/fapi/authorization?', {
     'client_id': 'testClient',
     'request_uri': 'urn:ietf:params:oauth:request_uri:KgfyLuYJBz6kN7kEdbuKhrIviIYs_D1b1Ix3thebw8o'
-  })
+  }, {})
 }

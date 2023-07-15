@@ -8,11 +8,11 @@ import { Constants } from 'src/app/Constants';
   styleUrls: ['./token.component.css']
 })
 export class TokenComponent {
-  requestInfo: RequestInfo = new RequestInfo('Token Request', 'POST', 'application/x-www-form-urlencoded', '/fapi/token', {
-    ...Constants.ClientAuthenticationParams,
+  requestInfo: RequestInfo = new RequestInfo('Token Request', 'POST', '/fapi/token', {
+    ...Constants.ExampleClientAuthenticationParams,
     'grant_type': 'authorization_code',
     'code': 'N8QOaWYSlcdudVRXqLymTepnz50_sjx1NVszSvmsaO8',
     'code_verifier': 'Y3daYiOMDh37owUIoHaV2BCQAI_coy9KWy9Ix2jFH6U',
     'redirect_uri': 'https://example.com/fapi/cb'
-  })
+  }, { ...Constants.ContentTypeFormUrlEncodedHeader })
 }

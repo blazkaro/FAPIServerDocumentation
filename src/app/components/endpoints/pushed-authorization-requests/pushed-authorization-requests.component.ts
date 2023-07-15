@@ -9,8 +9,8 @@ import { Constants } from 'src/app/Constants';
   styleUrls: ['./pushed-authorization-requests.component.css']
 })
 export class PushedAuthorizationRequestsComponent {
-  requestInfo = new RequestInfo('Pushed Authorization Request', 'POST', 'application/x-www-form-urlencoded', '/fapi/par', {
-    ...Constants.ClientAuthenticationParams,
+  requestInfo = new RequestInfo('Pushed Authorization Request', 'POST', '/fapi/par', {
+    ...Constants.ExampleClientAuthenticationParams,
     'authorization_details': new OpenIdAuthorizationDetail(),
     'claims': 'sub email',
     'redirect_uri': 'https://example.com/fapi/cb',
@@ -23,5 +23,5 @@ export class PushedAuthorizationRequestsComponent {
     'dpop_pkh': 'AccDGHwdfSXq613nLTnkeIniSPWjrKdM-fiI9kIlyw0',
     'prompt': 'login',
     'max_age': '60'
-  })
+  }, { ...Constants.ContentTypeFormUrlEncodedHeader })
 }
