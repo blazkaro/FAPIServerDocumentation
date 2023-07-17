@@ -11,3 +11,10 @@
         <strong>access token</strong>. Otherwise, the provider will assume that's <strong>refresh token</strong>
     </li>
 </ul>
+<br>
+<p>
+    This endpoint provides response signature. The header <strong>X-Body-Security-Token</strong> is added to response
+    and contains v4 public PASETO signed by authorization server. You can verify signature with the same public key
+    which you use to verify <strong>id_token</strong>. This PASETO contains <strong>hash</strong> claim which is
+    Base64-Url encoded hash of response body in JSON format (without null values).
+</p>
